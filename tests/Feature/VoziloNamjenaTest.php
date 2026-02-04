@@ -87,4 +87,40 @@ class VoziloNamjenaTest extends TestCase
         $response->assertSee('Postoji vozilo s isteklom registracijom');
     }
 
+    #[Test]
+    public function jedna_namjena_ima_vise_vozila(): void
+    {
+        $namjena = NamjenaVozila::create([
+            'naziv'=>'Teretno',
+        ]);
+
+        Vozilo::create([
+            'naziv'=>'MAN',
+            'tip'=>'TGS',
+            'motor'=>'dizel',
+            'registracija'=>'ST1111AA',
+            'istek_registracije'=>now()->addYear(),
+            'namjenaid' => $namjena->id,
+        ]);
+
+        Vozilo::create([
+            'naziv'=>'Mercedes',
+            'tip'=>'Actros',
+            'motor'=>'dizel',
+            'registracija'=>'ST2222BB',
+            'istek_registracije'=>now()->addYear(),
+            'namjenaid' => $namjena->id,
+        ]);
+
+        $vozila = Vozilo::where('namjenaid',$namjena->id)
+            ->orderBy('naziv')
+            ->get();
+
+        $this->assertCount(2,$vozila);
+        $this->assertEquals(
+            ['MAN','Mercedes'],
+            $vozila->pluck('naziv')->toArray()
+        );
+    }
+
 }
