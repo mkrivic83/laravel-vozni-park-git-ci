@@ -42,7 +42,7 @@ class VoziloNamjenaTest extends TestCase
         $vozilo = Vozilo::with('namjena')->first();
 
         $this->assertNotNull($vozilo->namjena);
-        $this->assertEquals('Putničko',$vozilo->namjena->naziv);
+        $this->assertEquals('Osobno',$vozilo->namjena->naziv);
     }
 
 
