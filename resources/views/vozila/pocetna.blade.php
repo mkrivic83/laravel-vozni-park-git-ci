@@ -9,6 +9,10 @@
         DB: {{ config('database.connections.mysql.database') }}
     </div>
 
+    <div class="text-sm text-gray-500">
+        Dobro došao na početnu stranicu
+    </div>
+
    
 </div>
 @include('layouts.footer')
