@@ -10,7 +10,7 @@
     </div>
 
     <div class="text-sm text-gray-500">
-        Dobro došao na početnu stranicu
+        Dobro došao na početnu stranicu i opet pokrenuo CI CD
     </div>
 
    
