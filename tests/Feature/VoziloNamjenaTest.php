@@ -86,7 +86,7 @@ class VoziloNamjenaTest extends TestCase
         $response->assertStatus(403);
         $response->assertSee('Postoji vozilo s isteklom registracijom');
     }
-
+    //test
     #[Test]
     public function jedna_namjena_ima_vise_vozila(): void
     {
