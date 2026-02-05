@@ -18,6 +18,9 @@
     <div class="text-sm text-gray-500">
         {{ \Carbon\Carbon::now()->format('d.m.Y H:i:s') }}
     </div>
+    <div class="text-sm text-gray-500">
+        CI CD skupa
+    </div>
 
    
 </div>
