@@ -12,6 +12,9 @@
     <div class="text-sm text-gray-500">
         Dobro došao na početnu stranicu i opet pokrenuo CI CD
     </div>
+    <div class="text-sm text-gray-500">
+        Testiram još jedan deploy za CI CD
+    </div>
 
    
 </div>
