@@ -7,6 +7,7 @@
            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
             + Novo vozilo
         </a>
+        <p>Vrijeme ispisa: {{ \Carbon\Carbon::now()->format('d.m.Y H:i:s') }}</p>
     </div>
 
     @if(session('status'))
